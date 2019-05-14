@@ -9,13 +9,11 @@ const surveySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  surveyQuestions: [{
+  surveyQuestions: {
     que: String,
     ans1: String,
-    ans2: String,
-    ans3: String,
-    ans4: String
-  }]
+    ans2: String
+  }
 })
 
 module.exports = mongoose.model('Survey', surveySchema)
