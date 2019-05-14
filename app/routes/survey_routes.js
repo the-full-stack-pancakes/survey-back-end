@@ -44,7 +44,7 @@ router.get('/surveys/:id', requireToken, (req, res, next) => {
 })
 // UPDATE
 router.patch('/surveys/:id', requireToken, removeBlanks, (req, res, next) => {
-  delete req.body.example.owner
+  delete req.body.survey.owner
 
   Survey.findById(req.params.id)
     .then(handle404)
@@ -55,4 +55,17 @@ router.patch('/surveys/:id', requireToken, removeBlanks, (req, res, next) => {
     .then(() => res.sendStatus(204))
     .catch(next)
 })
+
+// DESTROY
+router.delete('/surveys/:id', requireToken, (req, res, next) => {
+  Survey.findById(req.params.id)
+    .then(handle404)
+    .then(survey => {
+      requireOwnership(req, survey)
+      survey.remove()
+    })
+    .then(() => res.sendStatus(204))
+    .catch(next)
+})
+
 module.exports = router
