@@ -49,4 +49,16 @@ router.patch('/answers/:id', requireToken, removeBlanks, (req, res, next) => {
     .catch(next)
 })
 
+// DESTROY / DELETE
+router.delete('/answers/:id', requireToken, (req, res, next) => {
+  Answer.findById(req.params.id)
+    .then(handle404)
+    .then(answer => {
+      requireOwnership(req, answer)
+      answer.remove()
+    })
+    .then(() => res.sendStatus(204))
+    .catch(next)
+})
+
 module.exports = router
