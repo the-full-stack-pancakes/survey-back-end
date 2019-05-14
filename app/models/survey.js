@@ -12,18 +12,20 @@ const surveySchema = new mongoose.Schema({
   questions: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Question',
-    required: true
-  },
-  answers: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Answer',
-    required: true
+    required: true,
+    answer: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Answer',
+      required: true
+    }
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
   }
+}, {
+  timestamps: true
 })
 
 module.exports = mongoose.model('Survey', surveySchema)

@@ -18,8 +18,9 @@ const router = express.Router()
 
 // INDEX
 // GET /questions
-router.get('/questions', requireToken, (req, res, next) => {
+router.get('/questions', (req, res, next) => {
   Question.find()
+    .populate('answer')
     .then(questions => {
       return questions.map(question => question.toObject())
     })
