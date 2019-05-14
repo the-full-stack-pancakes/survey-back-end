@@ -10,6 +10,8 @@ const answerSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   }
+}, {
+  timestamps: true
 })
 
 module.exports = mongoose.model('Answer', answerSchema)

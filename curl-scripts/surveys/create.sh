@@ -12,11 +12,7 @@ curl "${API}${URL_PATH}" \
     "survey": {
       "title": "'"${TITLE}"'",
       "description": "'"${DES}"'",
-      "surveyQuestions": {
-        "que": "'"${QUE}"'",
-        "ans1": "'"${ANS1}"'",
-        "ans2": "'"${ANS2}"'"
-      }
+      "questions": "'"${QUE}"'"
     }
   }'
 
