@@ -9,10 +9,16 @@ const surveySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  surveyQuestions: {
+  surveyQuestions: [{
     que: String,
     ans1: String,
-    ans2: String
+    ans2: String,
+    required: true
+  }],
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
 })
 
