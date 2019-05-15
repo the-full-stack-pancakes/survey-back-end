@@ -1,16 +1,17 @@
 #!/bin/bash
 
 API="http://localhost:4741"
-URL_PATH="/questions"
+URL_PATH="/ones"
 
-curl "${API}${URL_PATH}/${ID}" \
+curl "${API}${URL_PATH}" \
   --include \
-  --request PATCH \
+  --request POST \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
-    "question": {
-      "question": "'"${QUE}"'"
+    "one": {
+      "title": "'"${TITLE}"'",
+      "count": "'"${COU}"'"
     }
   }'
 

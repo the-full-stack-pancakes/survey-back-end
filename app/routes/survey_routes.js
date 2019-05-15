@@ -21,14 +21,14 @@ router.post('/surveys', requireToken, (req, res, next) => {
 // INDEX
 router.get('/surveys', (req, res, next) => {
   Survey.find()
-    .populate({
-      path: 'questions',
-      model: 'Question',
-      populate: {
-        path: 'answer',
-        model: 'Answer'
-      }
-    })
+    //.populate({
+    //  path: 'questions',
+    //  model: 'Question',
+    //  populate: {
+    //    path: 'answer',
+    //    model: 'Answer'
+    //  }
+    //})
     .then(surveys => {
       return surveys.map(survey => survey.toObject())
     })
