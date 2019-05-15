@@ -1,22 +1,21 @@
 const mongoose = require('mongoose')
 
-const questionSchema = new mongoose.Schema({
+const oneSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
   },
+  count: {
+    type: Number,
+    default: 0
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
-  },
-  answer: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Answer',
     required: true
   }
 }, {
   timestamps: true
 })
 
-module.exports = mongoose.model('Question', questionSchema)
+module.exports = mongoose.model('One', oneSchema)
