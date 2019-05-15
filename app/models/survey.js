@@ -9,9 +9,14 @@ const surveySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  answerOne: {
+  one: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'One',
+    required: true
+  },
+  two: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Two',
     required: true
   },
   owner: {
