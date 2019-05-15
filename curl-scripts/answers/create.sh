@@ -10,7 +10,8 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
     "answer": {
-      "title": "'"${TITLE}"'"
+      "ans1": "'"${ONE}"'",
+      "ans2": "'"${TWO}"'"
     }
   }'
 

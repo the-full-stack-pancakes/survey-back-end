@@ -1,9 +1,17 @@
 const mongoose = require('mongoose')
 
 const answerSchema = new mongoose.Schema({
-  title: {
+  ans1: {
     type: String,
     required: true
+  },
+  ans2: {
+    type: String,
+    required: true
+  },
+  count: {
+    type: Number,
+    default: 0
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
