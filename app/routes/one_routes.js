@@ -35,14 +35,12 @@ router.get('/ones/:id', (req, res, next) => {
     .catch(next)
 })
 // UPDATE
-router.patch('/ones/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/ones/:id', removeBlanks, (req, res, next) => {
   delete req.body.one.owner
 
   One.findById(req.params.id)
     .then(handle404)
     .then(one => {
-      requireOwnership(req, one)
-
       return one.update(req.body.one)
     })
     .then(() => res.sendStatus(204))
