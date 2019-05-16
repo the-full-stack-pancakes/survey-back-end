@@ -1,6 +1,6 @@
 # Introduction
 
-We are the Full-Stack Pancakes! Our group includes @ejparenll,
+We are the Full-Stack Pancakes! Our group includes @ejparnell,
 @binnsy, @jafarlow, and @JeanAugustin. We made an app where a user
 is able to create custom surveys in the format of 'Would You Rather?'.
 
@@ -55,4 +55,4 @@ Our first day of the project we had created 3 schemas. Survey, questions, and an
 ### Links to Deployed site and Front End
 
 You can vist the deployed site here: https://salty-caverns-24367.herokuapp.com/
-You can vist the front end here: 
+You can vist the front end here: https://the-full-stack-pancakes.github.io/survey-front-end/ 
