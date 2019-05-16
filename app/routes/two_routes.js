@@ -35,7 +35,7 @@ router.get('/twos/:id', (req, res, next) => {
     .catch(next)
 })
 // UPDATE
-router.patch('/twos/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/twos/:id', removeBlanks, (req, res, next) => {
   delete req.body.two.owner
 
   Two.findById(req.params.id)

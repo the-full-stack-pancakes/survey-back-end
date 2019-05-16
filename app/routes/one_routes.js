@@ -35,7 +35,7 @@ router.get('/ones/:id', (req, res, next) => {
     .catch(next)
 })
 // UPDATE
-router.patch('/ones/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/ones/:id', removeBlanks, (req, res, next) => {
   delete req.body.one.owner
 
   One.findById(req.params.id)
